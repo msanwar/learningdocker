@@ -1,3 +1,4 @@
 From centos
-cmd uname -a
-cmd echo "Custom docker instance"
+run yum -y install httpd
+env APACH_LOG_DIR /var/log/httpd
+entrypoint ["/usr/sbin/httpdctl","-D","FOREGROUND"]
